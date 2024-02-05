@@ -7,7 +7,6 @@ const NavBar = () => {
     <nav className="top-bar">
       <div className="nav-left">
         <Link to="/" className="home-link">Home</Link>
-        <Link to='#/AboutUs' className="solar-system-link">About Us</Link>
       </div>
 
 
@@ -19,11 +18,11 @@ const NavBar = () => {
             <i className="fa fa-caret-down">Articles</i>
           </button>
           <div className='dropdown-content'>
-          <Link to="AllArticles">All Articles</Link>
-            <Link to="Article 1">Article 1</Link>
+          <Link to="articles">All Articles</Link>
+            <Link to="SearchArticle">Search</Link>
+            <Link to="/Article 1">Article 1</Link>
             <Link to="/Article 2">Article 2</Link>
             <Link to="/Article 3">Article 3</Link>
-            <Link to="/Article 4">Article 4</Link>
           </div>
         </div>
 
@@ -32,6 +31,7 @@ const NavBar = () => {
             <i className="fa fa-caret-down">User</i>
           </button>
           <div className='dropdown-content'>
+          <Link to="SearchUser">Search</Link>
             <Link to="User1">User1</Link>
             <Link to="User2">User2</Link>
             <Link to="User3">User3</Link>
@@ -54,13 +54,12 @@ const NavBar = () => {
 
         <div className ='dropdown'>
           <button className="dropdown-button">
-            <i className="fa fa-caret-down">Random</i>
+            <i className="fa fa-caret-down">Topic</i>
           </button>
           <div className='dropdown-content'>
-            <Link to="Random1">Random1</Link>
-            <Link to="Random2">Random2</Link>
-            <Link to="Random3">Random3</Link>
-            <Link to="Random4">Random4</Link>
+            <Link to="football">Football</Link>
+            <Link to="coding">Coding</Link>
+            <Link to="cooking">Cooking</Link>
           </div>
         </div>
 
