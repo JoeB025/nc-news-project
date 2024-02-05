@@ -31,3 +31,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </BrowserRouter>,
 )
+
+
+
+Use Render for your api 
+When you click on the link once its all created 
+e.g https://nc-news-gjgw.onrender.com
+add the /api on the end. otherwise it may give a 404 error code. 

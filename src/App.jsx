@@ -3,6 +3,7 @@ import { Routes, Route } from'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Header from './components/Header/Header'
 import Home from './components/Home/Home'
+import Articles from './components/Articles/Articles'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/AllArticles" element={<Articles />} />
       </Routes>
     </>
   )
