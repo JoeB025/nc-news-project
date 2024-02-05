@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { getArticles } from '../../../utils';
+import { getArticles } from '../../utils';
 import { useEffect, useState } from 'react';
 import './Articles.css'
 
@@ -11,7 +11,7 @@ export default function Articles() {
     useEffect(() => { 
       getArticles().then(response => {
         setArticleName(response.data.article);
-        console.log(response);
+        // console.log(response);
         setLoading(false);
       });
     }, []);
@@ -21,29 +21,33 @@ export default function Articles() {
   return (
     <>
     <section>
-      <p className='intro-text'>Welcome to Articles Page!</p>
+      <p className='intro-text'>Welcome to the Articles Page!</p>
       
       <ul key="uniqueId1" className='article-list'>
         {articleName.map((article) => {
             return (
 
               <h1 key={article.title} className='article-container'>    
+                  
                   <li>
-
+                    <h2>{article.title}</h2>
                     <div className='article-content'>
-                      <p><span className='article-text'>Article:</span> {article.title}</p>
                       <p><span className='author-text'>Author:</span> {article.author}</p>
                       <p><span className='topic-text'>Topic:</span> {article.topic}</p>
                     </div>
 
                     <div className='article-image'>
-                      <img src={article.article_img_url} className="article-image" alt="article-image" />
+                      <img 
+                        src={article.article_img_url} 
+                        className="article-image" 
+                        alt= {article.title} />
                     </div>
                     
                     <div className='comment-likes'>
                       <p><span className='comment-count-text'>Comment Count:</span> {article.number_of_comments}</p>
                       <p><span className='vote-text'>Votes:</span> {article.votes}</p>
                     </div>
+                    <Link to={`/articles/${article.article_id}`}>Link to article page</Link>
                   </li>
               </h1>
           )  

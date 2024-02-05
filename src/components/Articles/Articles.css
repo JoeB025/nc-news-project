@@ -5,7 +5,7 @@
   padding-left: 50px;
   padding-right: 50px;
   color: red;
-
+  list-style: none; 
 }
 
 
@@ -15,10 +15,20 @@
   text-align: center;
 }
 
+.article-content {
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
 
-.article-text,
 .author-text,
-.topic-text,
+.topic-text {
+  color: rgb(0, 194, 216);
+  margin-right: 3px;
+}
+
+
 .comment-count-text,
 .vote-text {
   display: flex;
