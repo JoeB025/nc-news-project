@@ -1,0 +1,14 @@
+Feedback - Jodie
+
+Hey Joseph :wave: Just messaging to give you some feedback on your wireframe. 
+Looking great so far! I would recommend adding the state in your component tree 
+for reference later on :+1: I'd also suggest writing the expected frontend paths 
+for each page eg. /, /article/:article_id, /articles/topic/:topic_name. 
+Hope this helps!
+
+isComplete === false 
+
+
+
+
+
