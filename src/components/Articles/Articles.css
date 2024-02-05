@@ -1,0 +1,63 @@
+.article-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: red;
+
+}
+
+
+.article-container {
+  border: dotted rgb(80, 0, 0) 2px;
+  font-size: 15px;
+  text-align: center;
+}
+
+
+.article-text,
+.author-text,
+.topic-text,
+.comment-count-text,
+.vote-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  color: rgb(107, 0, 161);
+}
+
+.article-image {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-likes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+
+.home-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.home-link-text {
+  color: rgb(255, 0, 128);
+  text-decoration: underline;
+  font-size: 50px;
+}
+
+.home-link-text:hover {
+  box-shadow: 0px 0px 10px 10px rgb(251, 0, 255);
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
