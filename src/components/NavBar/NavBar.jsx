@@ -41,7 +41,7 @@ const NavBar = () => {
 
         <div className ='dropdown'>
           <button className="dropdown-button">
-            <i className="fa fa-caret-down">User All Stars</i>
+            <i className="fa fa-caret-down">User All Stars &#9734;</i>
           </button>
           <div className='dropdown-content'>
             <Link to="Name1">Name1</Link>
@@ -60,6 +60,7 @@ const NavBar = () => {
             <Link to="football">Football</Link>
             <Link to="coding">Coding</Link>
             <Link to="cooking">Cooking</Link>
+            <Link to="music">Music &#9835; &#9836;</Link>
           </div>
         </div>
 

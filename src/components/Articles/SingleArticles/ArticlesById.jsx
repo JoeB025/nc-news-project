@@ -1,42 +1,45 @@
-import { getArticlesById } from '../../../utils';
-import { useEffect, useState } from 'react';
-import { useParams } from'react-router-dom';
-import './ArticlesById.css'
-
-
+import { getArticlesById } from "../../../utils";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./ArticlesById.css";
 
 export default function ArticlesById() {
-
   const { article_id } = useParams();
   const [articleById, setArticleById] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    getArticlesById(article_id).then((response) => {
+      setArticleById(response.data.article);
+      console.log(response.data.article);
+      setLoading(false);
+    });
+  }, []);
 
-    useEffect(() => { 
-      getArticlesById(article_id).then(response => {
-        setArticleById(response.data.article);
-        console.log(response.data.article);
-        setLoading(false);
-      });
-    }, []);
-
-
+  //const topicName = articleById.topic.slice(0, 1).toUpperCase() + articleById.topic.slice(1);
 
   return (
     <>
+      <h1 className="title">{articleById.title}</h1>
+    
 
-      <h1 className='title'>{articleById.title}</h1>
-      <p>Author: {articleById.author}</p>
-      <p>Topic: {articleById.topic}</p>
-      
+      <div className="body-container">
+        <div className="body">
+          <p>{articleById.body}</p>
+          <p>Author: {articleById.author}</p>
+          <p className="comments-votes">
+            <span>&#9998; &#9998; Comments: {articleById.comment_count}</span>
+            Votes: {articleById.votes} &#10084;
+          </p>
+        </div>
 
-      <div className='img-and-text'>
-        <p className='body'>{articleById.body}</p>
-        <img class='img' src={articleById.article_img_url}></img>
+        <img className="img" src={articleById.article_img_url}></img>
       </div>
+
+    <div className='created-container'>
       <p>Created: {articleById.created_at}</p>
-      <p>Comment Count: {articleById.comment_count}</p>
-      <p>Votes: {articleById.votes}</p>
+    </div>
+      
     </>
-  )
+  );
 }

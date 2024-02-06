@@ -30,7 +30,7 @@ export default function Articles() {
               <h1 key={article.title} className='article-container'>    
                   
                   <li>
-                    <h2>{article.title}</h2>
+                    <h2 className='article-header'>{article.title}</h2>
                     <div className='article-content'>
                       <p><span className='author-text'>Author:</span> {article.author}</p>
                       <p><span className='topic-text'>Topic:</span> {article.topic}</p>
@@ -47,7 +47,7 @@ export default function Articles() {
                       <p><span className='comment-count-text'>Comment Count:</span> {article.number_of_comments}</p>
                       <p><span className='vote-text'>Votes:</span> {article.votes}</p>
                     </div>
-                    <Link to={`/articles/${article.article_id}`}>Link to article page</Link>
+                    <Link to={`/articles/${article.article_id}`} className='articleLink'>Link to article page</Link>
                   </li>
               </h1>
           )  

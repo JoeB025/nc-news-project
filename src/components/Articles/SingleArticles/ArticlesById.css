@@ -1,31 +1,56 @@
 .title {
   text-align: center;
-  color: purple;
+  color: rgb(0, 88, 115);
+  margin-bottom: 50px;
 }
 
 
-
-
-
-.img-and-text {
+.body-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-left: 50px;
 }
 
 
 .body {
-  text-align: center;
+  text-align: justify;
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 30px;
   font-size: 22px;
+  color: rgb(0, 88, 115);
+}
+
+.comments-votes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  border-bottom: solid;
+  border-top: solid;
+  padding-bottom: 20px;
+  padding-top: 20px;
 
 }
 
 .img {
-  height: 400px;
-  width: 400px;
-  border-radius: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 350px;
+  width: 350px;
+  border-radius: 350px;
+  margin: auto;
+  position: relative;
+}
+
+.topic {
+  margin-left: 30px;
+}
+
+.created-container {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: darkslategrey;
+  font-size: 20px;
 }

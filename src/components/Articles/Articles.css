@@ -1,17 +1,26 @@
+body {
+  background-color: rgba(0, 0, 0, 0.942);
+}
+
 .article-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
   padding-left: 50px;
   padding-right: 50px;
-  color: red;
+  color: rgb(255, 255, 255);
   list-style: none; 
+}
+
+.article-header {
+  display: grid;
+  height: 80px;
 }
 
 
 .article-container {
-  border: dotted rgb(80, 0, 0) 2px;
-  font-size: 15px;
+  border: ridge rgb(235, 1, 126) 10px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -24,7 +33,7 @@
 
 .author-text,
 .topic-text {
-  color: rgb(0, 194, 216);
+  color: rgb(219, 0, 121);
   margin-right: 3px;
 }
 
@@ -36,7 +45,7 @@
   align-items: center;
   margin-bottom: 5px;
   margin-top: 20px;
-  color: rgb(107, 0, 161);
+  color: rgb(234, 0, 152);
 }
 
 .article-image {
@@ -53,6 +62,11 @@
   justify-content: space-evenly;
 }
 
+.articleLink {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
 
 .home-link {
   display: flex;
@@ -61,7 +75,7 @@
 }
 
 .home-link-text {
-  color: rgb(255, 0, 128);
+  color: rgb(230, 0, 115);
   text-decoration: underline;
   font-size: 50px;
 }
