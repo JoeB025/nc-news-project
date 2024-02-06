@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(142, 142, 142);
+  color: black;
+}
+
+.comment-list {
+  list-style: none;
+  font-size: 10px;
+  border: solid red 5px;
+}

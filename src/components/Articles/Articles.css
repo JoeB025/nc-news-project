@@ -48,12 +48,15 @@ body {
   color: rgb(234, 0, 152);
 }
 
+.article-image-container {
+  display: flex;
+  justify-content: center;
+}
+
 .article-image {
   height: 200px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  width: 200px;
+  border-radius: 100px;
 }
 
 .comment-likes {

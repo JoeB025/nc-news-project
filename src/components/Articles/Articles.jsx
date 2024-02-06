@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import './Articles.css'
 
 
+
 export default function Articles() {
 
   const [articleName, setArticleName] = useState([]);
@@ -36,7 +37,7 @@ export default function Articles() {
                       <p><span className='topic-text'>Topic:</span> {article.topic}</p>
                     </div>
 
-                    <div className='article-image'>
+                    <div className='article-image-container'>
                       <img 
                         src={article.article_img_url} 
                         className="article-image" 
@@ -59,6 +60,7 @@ export default function Articles() {
       <div className='home-link'>
         <Link to='/'><span className='home-link-text'>Home</span></Link>
       </div>
+
     </>
   )
 }

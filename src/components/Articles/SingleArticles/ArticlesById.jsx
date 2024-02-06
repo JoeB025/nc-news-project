@@ -2,6 +2,7 @@ import { getArticlesById } from "../../../utils";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ArticlesById.css";
+import ArticleComments from "../../Comments/Comments";
 
 export default function ArticlesById() {
   const { article_id } = useParams();
@@ -11,7 +12,6 @@ export default function ArticlesById() {
   useEffect(() => {
     getArticlesById(article_id).then((response) => {
       setArticleById(response.data.article);
-      console.log(response.data.article);
       setLoading(false);
     });
   }, []);
@@ -21,7 +21,6 @@ export default function ArticlesById() {
   return (
     <>
       <h1 className="title">{articleById.title}</h1>
-    
 
       <div className="body-container">
         <div className="body">
@@ -36,10 +35,11 @@ export default function ArticlesById() {
         <img className="img" src={articleById.article_img_url}></img>
       </div>
 
-    <div className='created-container'>
-      <p>Created: {articleById.created_at}</p>
-    </div>
-      
+      <ArticleComments />
+
+      <div className="created-container">
+        <p>Created: {articleById.created_at}</p>
+      </div>
     </>
   );
 }
