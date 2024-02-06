@@ -17,7 +17,7 @@ export default function Articles() {
       });
     }, []);
 
-
+if (loading) return <p className='loading'>Articles loading...</p>
 
   return (
     <>
@@ -48,7 +48,9 @@ export default function Articles() {
                       <p><span className='comment-count-text'>Comment Count:</span> {article.number_of_comments}</p>
                       <p><span className='vote-text'>Votes:</span> {article.votes}</p>
                     </div>
-                    <Link to={`/articles/${article.article_id}`} className='articleLink'>Link to article page</Link>
+                    <div className='article-link-container'>
+                    <Link to={`/articles/${article.article_id}`} className='article-link'>Link to article page</Link>
+                    </div>
                   </li>
               </h1>
           )  

@@ -19,7 +19,6 @@
   align-items: center;
   padding: 30px;
   font-size: 22px;
-  color: rgb(0, 88, 115);
 }
 
 .comments-votes {
@@ -53,4 +52,9 @@
   justify-content: center;
   color: darkslategrey;
   font-size: 20px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 30px;
 }

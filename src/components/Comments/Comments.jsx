@@ -17,18 +17,29 @@ export default function ArticleComments() {
     });
   }, []);
 
+  if (loading) return <p>Loading comments...</p>;
+
   return (
     <>
+      <h1 className="comments-title">Comments</h1>
+
       <ul key={articleComments} className="comment-list">
         {articleComments.map((comments) => {
           return (
-            <h1 key={comments.title}>
-              <li key={articleComments.comment_id}>
-                <p className="comment-list">
-                  {comments.body}
-                </p>
+            <h2 key={comments.title}>
+              <li
+                key={articleComments.comment_id}
+                className="comments-container"
+              >
+                <div className="comment-info">
+                  <p>User: {comments.author}</p>
+                  <p>Votes: {comments.votes}</p>
+                  <p>Posted:</p>
+                  <p>{comments.created_at}</p>
+                </div>
+                <p className="comment-text">{comments.body}</p>
               </li>
-            </h1>
+            </h2>
           );
         })}
       </ul>

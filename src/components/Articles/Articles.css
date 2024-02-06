@@ -8,7 +8,7 @@ body {
   gap: 50px;
   padding-left: 50px;
   padding-right: 50px;
-  color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0);
   list-style: none; 
 }
 
@@ -19,7 +19,7 @@ body {
 
 
 .article-container {
-  border: ridge rgb(235, 1, 126) 10px;
+  border: ridge rgb(22, 0, 12) 10px;
   font-size: 18px;
   text-align: center;
 }
@@ -33,7 +33,7 @@ body {
 
 .author-text,
 .topic-text {
-  color: rgb(219, 0, 121);
+  color: rgba(38, 0, 21, 0.452);
   margin-right: 3px;
 }
 
@@ -45,7 +45,7 @@ body {
   align-items: center;
   margin-bottom: 5px;
   margin-top: 20px;
-  color: rgb(234, 0, 152);
+  color: rgba(0, 0, 0, 0.291);
 }
 
 .article-image-container {
@@ -65,9 +65,13 @@ body {
   justify-content: space-evenly;
 }
 
-.articleLink {
-  color: rgb(255, 255, 255);
-  text-align: center;
+.article-link:a {
+  color: rgb(0, 0, 222);
+}
+
+.article-link-container {
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 
@@ -75,16 +79,16 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  color: blue;
 }
 
-.home-link-text {
-  color: rgb(230, 0, 115);
+.home-link-text:a {
+  color: rgb(0, 0, 0);
   text-decoration: underline;
   font-size: 50px;
 }
 
-.home-link-text:hover {
-  box-shadow: 0px 0px 10px 10px rgb(251, 0, 255);
-  color: rgb(0, 0, 0);
-  text-decoration: underline;
+.loading {
+  text-align: center;
+  font-size: 30px;
 }
