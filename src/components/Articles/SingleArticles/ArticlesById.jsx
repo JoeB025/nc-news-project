@@ -16,6 +16,7 @@ export default function ArticlesById() {
     });
   }, []);
 
+  if (loading) return <p className='loading'>Article {article_id.title} loading...</p>
   //const topicName = articleById.topic.slice(0, 1).toUpperCase() + articleById.topic.slice(1);
 
   return (
