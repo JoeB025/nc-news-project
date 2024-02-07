@@ -16,9 +16,12 @@ export function getArticleComments(article_id) {
   return articlesApi.get(`/api/articles/${article_id}/comments`);
 }
 
-// export function postArticleComments(article_id, comment) {
-//   return articlesApi.post(`/api/articles/${article_id}/comments`, comment);
-// }
+export function updateVotes(article_id) {
+  return articlesApi.patch(`/api/articles/${article_id}`, {inc_votes: 1});
+}
+
+
+
 
 // app.get('/api/topics', getTopics); // gets the topics data
 

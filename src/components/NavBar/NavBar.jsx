@@ -6,7 +6,7 @@ const NavBar = () => {
     <>
     <nav className="top-bar">
       <div className="nav-left">
-        <Link to="/" className="home-link">Home</Link>
+        <Link to="/">Home</Link>
       </div>
 
 
@@ -19,10 +19,7 @@ const NavBar = () => {
           </button>
           <div className='dropdown-content'>
           <Link to="articles">All Articles</Link>
-            <Link to="SearchArticle">Search</Link>
-            <Link to="/Article 1">Article 1</Link>
-            <Link to="/Article 2">Article 2</Link>
-            <Link to="/Article 3">Article 3</Link>
+            <Link to="Random Article">Random Article</Link>
           </div>
         </div>
 
