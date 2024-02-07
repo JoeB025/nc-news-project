@@ -1,0 +1,39 @@
+.likes-button {
+  border: none;
+  background-color: white;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px
+}
+
+
+.heart {
+  color: black;
+}
+
+.heart:visited {
+  color: red;
+}
+
+.heart:focus {
+  color: red;
+}
+
+.heart:hover {
+  color: red;
+}
+
+.heart:active {
+  color: red;
+}
+
+
+.count {
+  font-size : 18px;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+

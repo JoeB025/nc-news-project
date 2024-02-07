@@ -1,7 +1,8 @@
 .title {
   text-align: center;
   color: rgb(0, 88, 115);
-  margin-bottom: 50px;
+  margin-bottom: 50px;                                                                 font-family: 'Knockout Punch', sans-serif;
+  font-family: 'Knockout Punch', sans-serif;                                                                                    
 }
 
 
@@ -19,6 +20,7 @@
   align-items: center;
   padding: 30px;
   font-size: 22px;
+  font-family: 'Moondog Fifteen', sans-serif;                                              
 }
 
 .comments-votes {

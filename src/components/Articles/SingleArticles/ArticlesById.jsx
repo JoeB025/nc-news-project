@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "./ArticlesById.css";
 import ArticleComments from "../../Comments/Comments";
 
+
 export default function ArticlesById() {
   const { article_id } = useParams();
   const [articleById, setArticleById] = useState([]);
@@ -16,7 +17,8 @@ export default function ArticlesById() {
     });
   }, []);
 
-  if (loading) return <p className='loading'>Article {article_id.title} loading...</p>
+  if (loading)
+    return <p className="loading">Article {article_id.title} loading...</p>;
   //const topicName = articleById.topic.slice(0, 1).toUpperCase() + articleById.topic.slice(1);
 
   return (
@@ -29,7 +31,9 @@ export default function ArticlesById() {
           <p>Author: {articleById.author}</p>
           <p className="comments-votes">
             <span>&#9998; &#9998; Comments: {articleById.comment_count}</span>
-            Votes: {articleById.votes} &#10084;
+            Votes: {articleById.votes}
+            <button className="like-button">&#10084;</button>
+            
           </p>
         </div>
 
