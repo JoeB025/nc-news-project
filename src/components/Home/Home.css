@@ -25,3 +25,11 @@
   font-size: 200px;
   color: rgb(0, 162, 162);
 }
+
+.user-name, 
+.user-msg {
+  text-align: center;
+  font-family: monospace;
+  font-size: 20px;
+  color: rgb(255, 102, 0);
+}

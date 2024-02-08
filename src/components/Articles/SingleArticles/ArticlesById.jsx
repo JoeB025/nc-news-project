@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ArticlesById.css";
 import ArticleComments from "../../Comments/Comments";
-
+import PostUserComments from "../../Comments/PostComments/PostUserComments";
 
 export default function ArticlesById() {
   const { article_id } = useParams();
@@ -19,7 +19,7 @@ export default function ArticlesById() {
 
   if (loading)
     return <p className="loading">Article {article_id.title} loading...</p>;
-  //const topicName = articleById.topic.slice(0, 1).toUpperCase() + articleById.topic.slice(1);
+
 
   return (
     <>
@@ -40,8 +40,9 @@ export default function ArticlesById() {
         <img className="img" src={articleById.article_img_url}></img>
       </div>
 
+      <PostUserComments />
       <ArticleComments />
-
+      
       <div className="created-container">
         <p>Created: {articleById.created_at}</p>
       </div>

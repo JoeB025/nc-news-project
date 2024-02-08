@@ -3,10 +3,10 @@ import './NavBar.css'
 
 const NavBar = () => {
   return (
-    <>
+    <>  
     <nav className="top-bar">
       <div className="nav-left">
-        <Link to="/">Home</Link>
+        <Link to="/" className='home-link'>Home</Link>
       </div>
 
 
@@ -15,7 +15,7 @@ const NavBar = () => {
 
         <div className ='dropdown'>
           <button className="dropdown-button">
-            <i className="fa fa-caret-down">Articles</i>
+            <i>Articles</i>
           </button>
           <div className='dropdown-content'>
           <Link to="articles">All Articles</Link>
@@ -25,20 +25,20 @@ const NavBar = () => {
 
         <div className ='dropdown'>
           <button className="dropdown-button">
-            <i className="fa fa-caret-down">User</i>
+            <i>User</i>
           </button>
           <div className='dropdown-content'>
+            <Link to='users'>All Users</Link>
           <Link to="SearchUser">Search</Link>
             <Link to="User1">User1</Link>
             <Link to="User2">User2</Link>
             <Link to="User3">User3</Link>
-            <Link to="User4">User4</Link>
           </div>
         </div>
 
         <div className ='dropdown'>
           <button className="dropdown-button">
-            <i className="fa fa-caret-down">User All Stars &#9734;</i>
+            <i>User All Stars &#9734;</i>
           </button>
           <div className='dropdown-content'>
             <Link to="Name1">Name1</Link>
@@ -51,12 +51,12 @@ const NavBar = () => {
 
         <div className ='dropdown'>
           <button className="dropdown-button">
-            <i className="fa fa-caret-down">Topic</i>
+            <i>Topic</i>
           </button>
           <div className='dropdown-content'>
             <Link to="football">Football</Link>
             <Link to="coding">Coding</Link>
-            <Link to="cooking">Cooking</Link>
+            <Link to="articles/topic/cooking">Cooking</Link>
             <Link to="music">Music &#9835; &#9836;</Link>
           </div>
         </div>
@@ -72,7 +72,6 @@ const NavBar = () => {
         <Link to='#' className="sign-up-link">Sign-up</Link>
       </div>
     </nav>
-
 
 </>
   );

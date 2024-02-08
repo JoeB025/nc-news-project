@@ -11,14 +11,27 @@ export default function Articles() {
   useEffect(() => {
     getArticles().then((response) => {
       setArticleName(response.data.article);
+      console.log(response.data.article);
       setLoading(false);
     });
   }, []);
 
   if (loading) return <p className="loading">Articles loading...</p>;
 
+
+  // if (articleName.topic === 'cooking') {
+  //   <Link to="/articles/topic/cooking"></Link>
+  //   return <p>{articleName.topic}</p>
+  // }
+  // can make this parametric to work 
+  // with article or cooking or football etc...
+
+
+
+
   return (
     <>
+    <div className='container'>
       <section>
         <p className="intro-text">Welcome to the Articles Page!</p>
 
@@ -78,6 +91,7 @@ export default function Articles() {
             <i className="fa-solid fa-house"></i>
           </span>
         </Link>
+      </div>
       </div>
     </>
   );
