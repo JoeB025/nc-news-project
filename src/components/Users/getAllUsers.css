@@ -1,0 +1,28 @@
+.heading {
+  text-align: center;
+  font-family: monospace;
+  font-size: 35px;
+  color: rgb(187, 187, 187);
+}
+
+.all-users {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: monospace;
+  font-size: large;
+  gap: 50px;
+}
+
+
+.single-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 50px;
+  margin-bottom: 150px;
+}
+
+.user-avatar-img {
+  height: 120px;
+}

@@ -2,19 +2,21 @@ body {
   background-color: rgba(0, 0, 0, 0.942);
 }
 
+.container {
+  resize: both;
+  overflow: auto;
+}
+
 .article-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
   padding-left: 50px;
   padding-right: 50px;
   color: rgba(0, 0, 0);
   list-style: none; 
-}
-
-.article-header {
-  display: grid;
-  height: 80px;
+  overflow: auto;
+  resize: both;
 }
 
 

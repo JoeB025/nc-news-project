@@ -20,6 +20,24 @@ export function updateVotes(article_id) {
   return articlesApi.patch(`/api/articles/${article_id}`, {inc_votes: 1});
 }
 
+// doing the below return means you can just put users in the getAllUsers file. 
+export function getUsers() {
+  return articlesApi.get("/api/users").then((response) => {
+    return response.data.users;
+  })
+}; 
+
+export function insertComments(article_id, body, username) {
+  return articlesApi.post(`/api/articles/${article_id}/comments`, 
+  {body : body, username : username}
+  )
+};
+
+
+
+
+
+
 
 
 

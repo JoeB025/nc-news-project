@@ -1,0 +1,54 @@
+
+
+
+.add-comment-container {
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+.add-comment-text {
+  color: rgb(0, 88, 115);
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+  font-family: 'knockout Punch';
+  font-size: 30px;
+  width: 100%;
+}
+
+
+.submit-comment-form input{
+  text-indent: 10px;
+  font-size: 20px;
+  width: 98%;
+  border: dashed 5px rgb(0, 88, 115);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 150px;
+  color: rgb(0, 88, 115);
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submit-comment-button {
+  width: 25%;
+  font-family: 'Moondog Fifteen', sans-serif;
+  font-size: 20px;
+  color: white;
+  height: 45px;
+  border-radius: 100px;
+  background-color: rgb(0, 88, 115);
+  border: none;
+}

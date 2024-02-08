@@ -6,6 +6,7 @@ import Home from "./components/Home/Home";
 import Articles from "./components/Articles/Articles";
 import ArticlesById from "./components/Articles/SingleArticles/ArticlesById";
 import ArticleComments from "./components/Comments/Comments";
+import AllUsers from './components/Users/getAllUsers';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
           path="/articles/:article_id/comments"
           element={<ArticleComments />}
         />
-
+        <Route path="/users" element={<AllUsers />} />
+        {/* <Route path="/articles/topic/cooking" element={<Articles />} /> */}
       </Routes>
     </>
   );
