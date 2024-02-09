@@ -1,30 +1,44 @@
-import { insertComments, getArticlesById } from "../../../utils";
-import { useEffect, useState } from "react";
+import { insertComments } from "../../../utils";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../../Users/singleUser/SingleUser";
-import { useContext } from "react";
 import "./PostUserComments.css";
 
-export default function PostUserComments() {
-  const [userComments, setUserComments] = useState([]);
+
+export default function PostUserComments(props) {
+  const {articleComments,setArticleComments} = props;
+  const [userComments, setUserComments] = useState("");
   const [body, setBody] = useState("");
   const { article_id } = useParams();
   const { user } = useContext(UserContext);
 
+  useEffect(() => {
+    setUserComments(articleComments);
+  }, [articleComments]);
+
   const addNewComment = (event) => {
     event.preventDefault();
+    setArticleComments((currComments) => {const commentObj = 
+    {
+      body: body,
+      author: user.username,
+      votes : 'votes',
+      created_at: 'Posted',
+    };
+    return [commentObj, ...currComments];
+  })
+
+
     insertComments(article_id, body, user.username)
-      .then((response) => {})
+      .then((response) => {
+        const newComment = response.data.comment;
+        setUserComments([newComment, ...userComments]);
+        setBody("");
+      })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  useEffect(() => {
-    getArticlesById(article_id).then((response) => {
-      setUserComments(response);
-    });
-  }, []);
 
   return (
     <>
@@ -34,19 +48,19 @@ export default function PostUserComments() {
         </div>
 
         <div className="add-comment-container">
-          <p class="add-comment-text">Add new comment</p>
+          <p className="add-comment-text">Add new comment</p>
           <div className="form-container">
-            <form className="submit-comment-form" onSubmit={addNewComment}>
+            <form className="submit-comment-form" type="submit">
               <label htmlFor="body">
                 <input
                   type="text"
                   id="body"
                   value={body}
-                  placeholder="Enter comment &#9998;"
+                  placeholder="Enter comment"
                   onChange={(event) => {
                     setBody(event.target.value);
                   }}
-                ></input>
+                />
               </label>
             </form>
           </div>
@@ -60,3 +74,9 @@ export default function PostUserComments() {
     </>
   );
 }
+
+
+
+
+
+

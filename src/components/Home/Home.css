@@ -33,3 +33,12 @@
   font-size: 20px;
   color: rgb(255, 102, 0);
 }
+
+
+
+.delete-text {
+  font-size: 50px;
+  text-align: center;
+  border: black solid 5px;
+  padding: 20px;
+}

@@ -10,13 +10,13 @@ export const UserProvider = ({ children }) => {
   });
 
 
-  function updateUser(newUser) {
-    setUser(newUser)
-  }
+  // function updateUser(newUser) {
+  //   setUser(newUser)
+  // }
 
 
   return (
-    <UserContext.Provider value={{user, setUser : updateUser}}>
+    <UserContext.Provider value={{user, setUser}}>
       {children}
       </UserContext.Provider>
   );
