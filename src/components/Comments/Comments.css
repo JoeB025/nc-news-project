@@ -23,7 +23,7 @@ body {
 }
 
 .comments-container {
-  height: 220px;
+  height: 300px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
@@ -35,11 +35,11 @@ body {
   align-items: center;
 }
 
-
 .delete-button-container {
   display: flex;
-  border-bottom: rgb(0, 88, 115) solid 5px;
+  flex-direction:row;
   justify-content: right;
+  border-bottom: rgb(0, 88, 115) solid 5px;
 }
 
 .delete-button {
@@ -47,9 +47,8 @@ body {
   font-size: 18px;
   border: none;
   height: 28px;
-  width: 25%;
   background-color: rgb(0, 88, 115);
   color: white;
   font-family: "Moondog Fifteen", sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }

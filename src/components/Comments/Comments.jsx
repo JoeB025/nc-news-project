@@ -32,13 +32,14 @@ export default function ArticleComments(props) {
           return (
             <h2 key={comments.comment_id}>
               <li className="comments-container">
-                <div className="comment-info">
+                <div>
                   <p>User: {comments.author}</p>
                   <p>Votes: {comments.votes}</p>
                   <p>Posted: {comments.created_at}</p>   
                 </div>
                 <p className="comment-text">{comments.body}</p>
-                <div className="delete-button-container">
+              </li>
+              <div className="delete-button-container">
                   <button
                     className="delete-button"
                     onClick={() => comments.author === user.username ? deleteComments(comments.comment_id) : alert("Cannot delete comment")}
@@ -46,7 +47,6 @@ export default function ArticleComments(props) {
                     Delete comment
                   </button>
                 </div>
-              </li>
             </h2>
           );
         })}
