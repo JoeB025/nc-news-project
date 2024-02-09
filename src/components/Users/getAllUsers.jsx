@@ -23,15 +23,15 @@ useEffect(() => {
 if (loading) return <p className="loading">
   <span>Loading users....</span>
   <span>While you wait... maybe make a short story using these icons. Good Luck!</span>
-  <span><i class="fa-brands fa-playstation"></i></span>
-  <span><i class="fa-brands fa-steam"></i></span>
-  <span><i class="fa-solid fa-skull-crossbones"></i></span>
-  <span><i class="fa-solid fa-truck-medical"></i></span>
-  <span><i class="fa-solid fa-volume-off"></i></span>
-  <span><i class="fa-solid fa-dragon"></i></span>
-  <span><i class="fa-solid fa-rocket"></i></span>
-  <span><i class="fa-solid fa-hippo"></i></span>
-  <span><i class="fa-brands fa-earlybirds"></i></span>
+  <span><i className="fa-brands fa-playstation"></i></span>
+  <span><i className="fa-brands fa-steam"></i></span>
+  <span><i className="fa-solid fa-skull-crossbones"></i></span>
+  <span><i className="fa-solid fa-truck-medical"></i></span>
+  <span><i className="fa-solid fa-volume-off"></i></span>
+  <span><i className="fa-solid fa-dragon"></i></span>
+  <span><i className="fa-solid fa-rocket"></i></span>
+  <span><i className="fa-solid fa-hippo"></i></span>
+  <span><i className="fa-brands fa-earlybirds"></i></span>
   
   
   </p>
