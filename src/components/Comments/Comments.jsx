@@ -2,16 +2,15 @@ import { getArticleComments } from "../../utils";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Comments.css";
-
-import { useContext } from 'react';
-import { UserContext } from '../Users/singleUser/SingleUser';
+import { deleteComments } from "../../utils";
+import { useContext } from "react";
+import { UserContext } from "../Users/singleUser/SingleUser";
 
 export default function ArticleComments() {
   const { article_id } = useParams();
-  const [articleComments, setArticleComments] = useState([]);
+  //  // update this state.
   const [loading, setLoading] = useState(true);
-
-  const { user } = useContext(UserContext)
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     getArticleComments(article_id).then((response) => {
@@ -26,8 +25,6 @@ export default function ArticleComments() {
     return <p>No comments yet!</p>;
   }
 
-  console.log(user)
-  console.log(articleComments)
 
   return (
     <>
@@ -37,19 +34,27 @@ export default function ArticleComments() {
         {articleComments.map((comments) => {
           return (
             <h2 key={comments.title}>
-              <li
-                key={comments.comment_id}
-                className="comments-container"
-              >
+              <li key={comments.comment_id} className="comments-container">
                 <div className="comment-info">
                   <p>User: {comments.author}</p>
                   <p>Votes: {comments.votes}</p>
                   <p>Posted:</p>
-                  <p>{comments.created_at}</p>
+                  <p>{comments.created_at}</p>   
                 </div>
                 <p className="comment-text">{comments.body}</p>
               </li>
-            </h2>      
+              <div className="delete-button-container">
+              <button className="delete-button"
+                  onClick={() =>
+                    comments.author === user.username
+                      ? deleteComments(comments.comment_id) 
+                      : alert("Cannot delete comment")
+                  }
+                >
+                  Delete comment
+                </button>
+                </div>
+            </h2>
           );
         })}
       </ul>
@@ -57,13 +62,13 @@ export default function ArticleComments() {
   );
 }
 
-
-
-// put in user avatar images on the right hand side of comments. 
+// put in user avatar images on the right hand side of comments.
 // code below is not right but its a starting point.
- 
-{/* <li>
+
+{
+  /* <li>
 {comments.author === user.username ? (
   <img src={`${user.avatar_url}`} />) : (<img />)
 }
-</li> */}
+</li> */
+}

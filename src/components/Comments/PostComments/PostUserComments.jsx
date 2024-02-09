@@ -1,9 +1,11 @@
-import { insertComments, getArticlesById } from "../../../utils";
+import { insertComments } from "../../../utils";
+import { getArticlesById } from "../../../utils";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../../Users/singleUser/SingleUser";
 import { useContext } from "react";
 import "./PostUserComments.css";
+
 
 export default function PostUserComments() {
   const [userComments, setUserComments] = useState([]);
@@ -11,20 +13,39 @@ export default function PostUserComments() {
   const { article_id } = useParams();
   const { user } = useContext(UserContext);
 
-  const addNewComment = (event) => {
-    event.preventDefault();
-    insertComments(article_id, body, user.username)
-      .then((response) => {})
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   useEffect(() => {
     getArticlesById(article_id).then((response) => {
       setUserComments(response);
     });
   }, []);
+
+
+  const addNewComment = (event) => {
+  event.preventDefault();
+  console.log('hello there, log works up to here')
+
+// need to set the state here. that way i will see it right away and in the background the actual post will be done
+// the user will be able to see it right away. 
+
+  insertComments(article_id, body, user.username)
+    .then((response) => {
+      const newComment = response.data.comment;
+
+      setUserComments((prevComments) => {
+        if (Array.isArray(prevComments)) {
+          return [newComment, ...prevComments];
+        } else {
+          return [newComment];
+        }
+      });
+      setBody("");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 
   return (
     <>
@@ -34,9 +55,9 @@ export default function PostUserComments() {
         </div>
 
         <div className="add-comment-container">
-          <p class="add-comment-text">Add new comment</p>
+          <p className="add-comment-text">Add new comment</p>
           <div className="form-container">
-            <form className="submit-comment-form" onSubmit={addNewComment}>
+            <form className="submit-comment-form" type='submit'>
               <label htmlFor="body">
                 <input
                   type="text"
@@ -60,3 +81,4 @@ export default function PostUserComments() {
     </>
   );
 }
+

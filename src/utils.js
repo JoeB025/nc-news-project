@@ -34,9 +34,14 @@ export function insertComments(article_id, body, username) {
 };
 
 
+export function deleteComments(comment_id) {
+  return articlesApi.delete(`api/comments/${comment_id}`)
+}
 
 
 
+
+// app.delete('/api/comments/:comment_id', deleteComments);
 
 
 

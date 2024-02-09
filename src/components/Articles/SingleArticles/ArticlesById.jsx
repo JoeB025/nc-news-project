@@ -5,8 +5,10 @@ import "./ArticlesById.css";
 import ArticleComments from "../../Comments/Comments";
 import PostUserComments from "../../Comments/PostComments/PostUserComments";
 
+
 export default function ArticlesById() {
   const { article_id } = useParams();
+  const [articleComments, setArticleComments] = useState([]);
   const [articleById, setArticleById] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,3 +51,10 @@ export default function ArticlesById() {
     </>
   );
 }
+
+// pass this as props to article comments
+// then pass it to post user comment. 
+// when we post a comment, we need to update that state.
+// articlebyid parent 
+// postuser comment child and article comments child.
+
